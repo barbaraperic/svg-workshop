@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GSAP</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+
+    <div>
+      <h1>Engineering for tomorrow</h1>
+      <button id="cta">Watch here</button>
+      <div class="panel">
+        <img id="light" src="../../starter-svgs/1466065248_Drinks-30.svg">
+        <p>Some great line about engineering</p>
+        <div class="box"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
+    <script>
+    
+        document.getElementById('cta').addEventListener('click', function() {
+
+            TweenMax.to('.panel', 1.5, {scaleY: 1, height:'100vh', ease: Circ.easeOut });
+            TweenMax.to('#light', 1, {opacity: 1, y: 0, delay: 1, ease: Back.easeOut.config(1.7)});
+            TweenMax.to('p', 1, {opacity: 1, y: 20, delay: 1.4});
+            TweenMax.to('.box', 3, {opacity: 1, scale: 1, ease: Elastic.easeOut.config(1, 0.3)});
+
+        })
+    
+    </script>
+  </body>
+</html>
